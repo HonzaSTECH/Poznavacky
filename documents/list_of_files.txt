@@ -7,6 +7,10 @@ Zobrazované stránky:
 		JavaScript: addPics.js
 		Stylesheet: css.css
 		Formulář pro přidání obrázku
+	classManagement.php
+		JavaScript: classManagement.js
+		Stylesheet: css.css
+		Nastavení a správa třídy pro jejího správce
 	emailPasswordRecovery.php
 		JavaScript: emailPasswordRecovery.js
 		Stylesheet: css.css
