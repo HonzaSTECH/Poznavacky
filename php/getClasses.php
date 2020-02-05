@@ -8,7 +8,7 @@
                 <tr  class='main_tr'>
                     <td>Název třídy</td>
                     <td>Poznávačky</td>
-                    <td>Vstupní kód</td>
+                    <td></td>
                 </tr>
             ";
     
@@ -23,10 +23,21 @@
     }
     while ($info = mysqli_fetch_array($result))
     {
-        echo '<tr class="listRow" onclick="choose(1,'.$info['tridy_id'].')">';
+        echo '<tr class="listRow" onclick="choose(event,1,'.$info['tridy_id'].')">';
         echo '<td class="listNames">'.$info['nazev'].'</td>';
         echo '<td class="listNames">'.$info['skupiny'].'</td>';
-        echo '<td class="listNaturals">'.$info['kod'].'</td>';
+        if ($userId == $info['spravce'])
+        {
+            echo '<td class="listNaturals" onclick=""><a href="classManagement.php"><button id="listAction" class="button">Správa třídy</button></a></td>';
+        }
+        else if ($info['status'] !== 'public')
+        {
+            echo '<td class="listNaturals" onclick=""><button id="listAction" class="button" onclick="leaveClass('.$info['tridy_id'].')">Opustit třídu</button></a></td>';
+        }
+        else
+        {
+            echo '<td></td>';
+        }
         echo '</tr>';
     }
     echo "</table>

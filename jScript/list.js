@@ -39,8 +39,14 @@ function submitClassCode()
     var code = document.getElementById("classCodeInput").value;
     postRequest("php/ajax/verifyClassCode.php", newClasses, alertResponse, null, null, code, null);
 }
-function choose(depth, option = undefined, type = undefined)
+function choose(event, depth, option = undefined, type = undefined)
 {
+	if (event !== null && event.target.id === 'listAction')
+	{
+		//Pokud bylo kliknuto na tlačítko, které slouží k provedení akce se třídou, nedělej nic
+		return;
+	}
+	
     switch (depth)
     {
         //Vypsání všech tříd
@@ -106,12 +112,23 @@ function showOptions(event, option, allowAll)
     if (allowAll === true)
     {
     
-        row.childNodes[0].innerHTML = "<button class='button' onclick='choose(3,\""+option+"\""+",0)'>Přidat obrázky</button><button class='button' onclick='choose(3,"+"\""+option+"\""+",1)'>Učit se</button><button class='button' onclick='choose(3,"+"\""+option+"\""+",2)'>Vyzkoušet se</button>";
+        row.childNodes[0].innerHTML = "<button class='button' onclick='choose(event,3,\""+option+"\""+",0)'>Přidat obrázky</button><button class='button' onclick='choose(3,"+"\""+option+"\""+",1)'>Učit se</button><button class='button' onclick='choose(3,"+"\""+option+"\""+",2)'>Vyzkoušet se</button>";
     }
     else
     {
-        row.childNodes[0].innerHTML = "<button class='button' onclick='choose(3,\""+option+"\""+",0)'>Přidat obrázky</button><button class='button buttonDisabled' style='cursor: not-allowed;' title='Na tuto část se nemůžete učit,\nprotože zatím neobsahuje žádné obrázky'>Učit se</button><button class='button buttonDisabled' style='cursor: not-allowed;' title='Z této části se nemůžete nechat testovat,\nprotože zatím neobsahuje žádné obrázky'>Vyzkoušet se</button>";
+        row.childNodes[0].innerHTML = "<button class='button' onclick='choose(event,3,\""+option+"\""+",0)'>Přidat obrázky</button><button class='button buttonDisabled' style='cursor: not-allowed;' title='Na tuto část se nemůžete učit,\nprotože zatím neobsahuje žádné obrázky'>Učit se</button><button class='button buttonDisabled' style='cursor: not-allowed;' title='Z této části se nemůžete nechat testovat,\nprotože zatím neobsahuje žádné obrázky'>Vyzkoušet se</button>";
     }
+}
+function leaveClass(classId)
+{
+	if (confirm("Opravdu chcete třídu opustit?"))
+	{
+		getRequest('php/ajax/leaveClass.php?cId='+classId, classLeft, alertResponse);
+	}
+}
+function classLeft()
+{
+	choose(null,0);	//Aktualizace tabulky tříd
 }
 function setSolidDimensions()
 {
@@ -134,15 +151,6 @@ function setDynamicDimensions()
     {
         document.getElementsByTagName("tr")[i].removeAttribute("style");
     }
-}
-function replaceTable(response)
-{
-    document.getElementById("table").innerHTML = response;
-}
-function loadParts(response)
-{
-    replaceTable(response);
-    setSolidDimensions();
 }
 function getRequest(url, success = null, error = null){
     var req = false;
@@ -235,6 +243,15 @@ function postRequest(url, success = null, error = null, email, cName, cCode, inf
 	req.send("email="+email+"&name="+cName+"&code="+cCode+"&info="+info);
 	return req;
 }
+function replaceTable(response)
+{
+    document.getElementById("table").innerHTML = response;
+}
+function loadParts(response)
+{
+    replaceTable(response);
+    setSolidDimensions();
+}
 function alertResponse(response)
 {
     alert(response);
@@ -247,5 +264,5 @@ function applicationSent(response)
 function newClasses(response)
 {
     alert(response);
-    choose(0);
+    choose(null,0);
 }

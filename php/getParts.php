@@ -24,7 +24,7 @@
         if ($count < 1)
         {
             //Zamítnutí přístupu
-            die("<div style='color: #990000; font-weight: bold;'>Přístup do třídy s touto poznávačkou odepřen!</div><br><button class='button' onclick='choose(0)'>Zpět na seznam tříd</button>");
+            die("<div style='color: #990000; font-weight: bold;'>Přístup do třídy s touto poznávačkou odepřen!</div><br><button class='button' onclick='choose(event,0)'>Zpět na seznam tříd</button>");
         }
         else
         {
@@ -91,7 +91,7 @@
         echo '</tr>';
     }
     echo "</table>
-    <button class='button' onclick='choose(1, $classId)'>Zpět na seznam poznávaček</button>";
+    <button class='button' onclick='choose(event,1, $classId)'>Zpět na seznam poznávaček</button>";
     
     //Aktualizovat uživateli poslední prohlíženou složku
     $query = "UPDATE uzivatele SET posledni_uroven = 2, posledni_slozka = $groupId WHERE uzivatele_id=$userId LIMIT 1";

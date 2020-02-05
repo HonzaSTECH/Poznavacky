@@ -121,9 +121,18 @@ AJAX serverové skripty:
 	checkPassword.php
 		Spouští se v accountSettings.js
 		Kontroluje zadané heslo při odstraňování vlastního účtu. Slouží pouze pro orientaci, heslo je později zkontrolováno detailněji
+	changeTheme.php
+		Spouští se v accountSettings.js
+		Přepíná zvolené barevné schéma stránek pro přihlášeného uživatele
+	leaveClass.php
+		Spouští se v list.js
+		Odstraňuje členství přihllášeného uživatele ze soukromé nebo uzamčené třídy
 	login.php
 		Spouští se v: index.js
 		Zpracovává data odeslaná z přihlašovacího formuláře a případně přihlašuje uživatele
+	newClassApply.php
+		Spouští se v: list.js
+		Odesílá e-mail s požadavkem na založení nové třídy na e-mailovou adresu správce služby
 	newPicture.php
 		Spouští se v: addPics.js
 		Zpracovává a případně ukládá data nově přidávaného obrázku
@@ -144,7 +153,10 @@ AJAX serverové skripty:
 		Kontroluje zadanou odpověď na testovací stránce a popřípadě zvyšuje skóre "uhodnuteObrazky" přihlášeného uživatele
 	updateConstants.php
 		Spouští se v: management.js
-		Uklídá změněné konstanty do CONSTANTS.php. Dostupné pouze pro uživatele se statusem "administrator"
+		Ukládá změněné konstanty do CONSTANTS.php. Dostupné pouze pro uživatele se statusem "administrator"
+	verifyClassCode.php
+		Spouští se v: list.js
+		Ověřuje uživatelem zadaný vstupní kód třídy a eventuelně přidává členství do databáze
 
 Vložené serverové skripty:
 	composeEmail.php
@@ -177,6 +189,9 @@ Vložené serverové skripty:
 	logger.php
 		Zahrnuje se do: deleteAccount.php, emailPasswordChange.php, getPics.php, getRandomPic.php, changeEmail.php, changePassword, changeUsername.php, login.php, logout.php, newPicture.php, newReport.php, recoverPassword.php, register.php, verification.php
 		Definuje funkci sloužící k logování zpráv do logovacího souboru
+	partSetter.php
+		Zahrnuje se do: addPics.php, learn.php, test.php
+		Nastavuje ID zvolené části (nebo poznávačky v případě zvolení všech částí) do $_SESSION
 	themeHandler.php
 		Zahrnuje se do: všechny zobrazované stránky kromě emailPasswordRecovery.php a index.php
 		Nastavuje CSS proměnné podle zvoleného vzhledu uloženého v $_SESSION
@@ -191,8 +206,8 @@ Obrázky:
 	arrow.png
 		Používá se na: learn.php
 		Šipka zobrazovaná na tlačítkách další a předchozí
-	background.jpg
-		Používá se na: accountSettings.php, addPics.php, emailPasswordRecovery.php, index.php, learn.php, list.php, test.php (odkaz se nachází v css.css)
+	bg0.jpg, bg1.jpg, bg2.jpg, bg3.jpg, bg4.jpg, bg5.jpg
+		Používá se na: accountSettings.php, addPics.php, emailPasswordRecovery.php, index.php, learn.php, list.php, test.php (odkaz se nachází v themes.xml)
 		Obrázek pozadí stránek
 	cross.gif:
 		Používá se na: getReports.php, management.php
@@ -227,6 +242,9 @@ Obrázky:
 	imagePreview:
 		Používá se na: addPics.php
 		Obrázek zobrazující se místo náhledu, pokud není zadána adresa obrázku
+	info.svg
+		Používá se na: list.php
+		Ikona informací zobrazovaná s atrubutou "title" vedle vstupních polí s nejasným významem
 	logo.png:
 		Používá se na: composeEmail.php
 		Logo zobrazované v hlavičkách e-mailů. Shodné s favicon.ico

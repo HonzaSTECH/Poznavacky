@@ -18,7 +18,7 @@
     if ($result['cnt'] < 1)
     {
         //Odepření přístupu
-        die("<div style='color: #990000; font-weight: bold;'>Přístup do třídy odepřen!</div><br><button class='button' onclick='choose(0)'>Zpět na seznam tříd</button>");
+        die("<div style='color: #990000; font-weight: bold;'>Přístup do třídy odepřen!</div><br><button class='button' onclick='choose(event,0)'>Zpět na seznam tříd</button>");
     }
     //Nastavování zvolené třídy do $_SESSION
     $_SESSION['class'] = $classId;
@@ -40,13 +40,13 @@
     }
     while ($info = mysqli_fetch_array($result))
     {
-    echo '<tr class="listRow" onclick="choose(2,'.$info['poznavacky_id'].')">';
+    echo '<tr class="listRow" onclick="choose(event,2,'.$info['poznavacky_id'].')">';
         echo '<td class="listNames">'.$info['nazev'].'</td>';
         echo '<td class="listNaturals">'.$info['casti'].'</td>';
     echo '</tr>';
     }
     echo "</table>
-    <button class='button' onclick='choose(0)'>Zpět na seznam tříd</button>";
+    <button class='button' onclick='choose(event,0)'>Zpět na seznam tříd</button>";
     
     //Aktualizovat uživateli poslední prohlíženou složku
     $query = "UPDATE uzivatele SET posledni_uroven = 1, posledni_slozka = $classId WHERE uzivatele_id=$userId LIMIT 1";
