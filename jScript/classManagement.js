@@ -147,7 +147,7 @@ function postRequest(url, success = null, error = null, classId, newName = null,
     }
     req.open("POST", url, true);
     req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    req.send("id="+classId+"name="+newName+"&status="+newStatus+"&code="+newCode);
+    req.send("id="+classId+"&name="+newName+"&status="+newStatus+"&code="+newCode);
     return req;
 }
 function responseFunc(response)

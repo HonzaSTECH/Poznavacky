@@ -113,6 +113,12 @@ AJAX serverové skripty:
 	getRandomPic.php
 		Spouští se v: test.js
 		Získává a odesílá odkaz náhodného obrázku ze zvolené poznávačky
+	changeClassName.php
+		Spouští se v: classManagement.php
+		Provádí vložení žádosti o změnu jména do databáze. Dostupné pouze pro správce dané třídy
+	changeClassStatus.php
+		Spouští se v: classManagement.php
+		Provádí změnu stavu třídy a popřípadě i jejího vstupního kódu. Dostupné pouze pro správce dané třídy
 	changeEmail.php
 		Spouští se v: accountSettings.js
 		Provádí změnu e-mailové adresy uživatele po jejím zadání uživatelem
