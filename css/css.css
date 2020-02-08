@@ -446,6 +446,10 @@ th {
 #static_info tr#tr_end {
     border-bottom: 0px solid var(--bila);
 }
+/* -------------------------------------------------- classManagement.php */
+#changeNameInput {
+    display: none;
+}
 /* -------------------------------------------------- obrazky + posun obrazku */
 .img {
     box-sizing: border-box;

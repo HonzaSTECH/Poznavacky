@@ -28,7 +28,7 @@
         echo '<td class="listNames">'.$info['skupiny'].'</td>';
         if ($userId == $info['spravce'])
         {
-            echo '<td class="listNaturals" onclick=""><a href="classManagement.php"><button id="listAction" class="button">Správa třídy</button></a></td>';
+            echo '<td class="listNaturals" onclick=""><a href="classManagement.php?cId='.$info['tridy_id'].'"><button id="listAction" class="button">Správa třídy</button></a></td>';
         }
         else if ($info['status'] !== 'public')
         {
