@@ -9,12 +9,14 @@ function firstTab()
 	document.getElementById("tab4").style.display = "none";
 	document.getElementById("tab5").style.display = "none";
 	document.getElementById("tab6").style.display = "none";
+	document.getElementById("tab7").style.display = "none";
 	
 	document.getElementById("tab2link").style.backgroundColor = "#FFFFFF";
 	document.getElementById("tab3link").style.backgroundColor = "#FFFFFF";
 	document.getElementById("tab4link").style.backgroundColor = "#FFFFFF";
 	document.getElementById("tab5link").style.backgroundColor = "#FFFFFF";
 	document.getElementById("tab6link").style.backgroundColor = "#FFFFFF";
+	document.getElementById("tab7link").style.backgroundColor = "#FFFFFF";
 	
 	document.getElementById("tab1").style.display = "block";
 	document.getElementById("tab1link").style.backgroundColor = "#9999FF";
@@ -26,12 +28,14 @@ function secondTab()
 	document.getElementById("tab4").style.display = "none";
 	document.getElementById("tab5").style.display = "none";
 	document.getElementById("tab6").style.display = "none";
+	document.getElementById("tab7").style.display = "none";
 	
 	document.getElementById("tab1link").style.backgroundColor = "#FFFFFF";
 	document.getElementById("tab3link").style.backgroundColor = "#FFFFFF";
 	document.getElementById("tab4link").style.backgroundColor = "#FFFFFF";
 	document.getElementById("tab5link").style.backgroundColor = "#FFFFFF";
 	document.getElementById("tab6link").style.backgroundColor = "#FFFFFF";
+	document.getElementById("tab7link").style.backgroundColor = "#FFFFFF";
 	
 	document.getElementById("tab2").style.display = "block";
 	document.getElementById("tab2link").style.backgroundColor = "#9999FF";
@@ -43,12 +47,14 @@ function thirdTab()
 	document.getElementById("tab4").style.display = "none";
 	document.getElementById("tab5").style.display = "none";
 	document.getElementById("tab6").style.display = "none";
+	document.getElementById("tab7").style.display = "none";
 	
 	document.getElementById("tab1link").style.backgroundColor = "#FFFFFF";
 	document.getElementById("tab2link").style.backgroundColor = "#FFFFFF";
 	document.getElementById("tab4link").style.backgroundColor = "#FFFFFF";
 	document.getElementById("tab5link").style.backgroundColor = "#FFFFFF";
 	document.getElementById("tab6link").style.backgroundColor = "#FFFFFF";
+	document.getElementById("tab7link").style.backgroundColor = "#FFFFFF";
 	
 	document.getElementById("tab3").style.display = "block";
 	document.getElementById("tab3link").style.backgroundColor = "#9999FF";
@@ -60,12 +66,14 @@ function fourthTab()
 	document.getElementById("tab3").style.display = "none";
 	document.getElementById("tab5").style.display = "none";
 	document.getElementById("tab6").style.display = "none";
+	document.getElementById("tab7").style.display = "none";
 	
 	document.getElementById("tab1link").style.backgroundColor = "#FFFFFF";
 	document.getElementById("tab2link").style.backgroundColor = "#FFFFFF";
 	document.getElementById("tab3link").style.backgroundColor = "#FFFFFF";
 	document.getElementById("tab5link").style.backgroundColor = "#FFFFFF";
 	document.getElementById("tab6link").style.backgroundColor = "#FFFFFF";
+	document.getElementById("tab7link").style.backgroundColor = "#FFFFFF";
 	
 	document.getElementById("tab4").style.display = "block";
 	document.getElementById("tab4link").style.backgroundColor = "#9999FF";
@@ -77,12 +85,14 @@ function fifthTab()
 	document.getElementById("tab3").style.display = "none";
 	document.getElementById("tab4").style.display = "none";
 	document.getElementById("tab6").style.display = "none";
+	document.getElementById("tab7").style.display = "none";
 	
 	document.getElementById("tab1link").style.backgroundColor = "#FFFFFF";
 	document.getElementById("tab2link").style.backgroundColor = "#FFFFFF";
 	document.getElementById("tab3link").style.backgroundColor = "#FFFFFF";
 	document.getElementById("tab4link").style.backgroundColor = "#FFFFFF";
 	document.getElementById("tab6link").style.backgroundColor = "#FFFFFF";
+	document.getElementById("tab7link").style.backgroundColor = "#FFFFFF";
 	
 	document.getElementById("tab5").style.display = "block";
 	document.getElementById("tab5link").style.backgroundColor = "#9999FF";
@@ -94,15 +104,36 @@ function sixthTab()
 	document.getElementById("tab3").style.display = "none";
 	document.getElementById("tab4").style.display = "none";
 	document.getElementById("tab5").style.display = "none";
+	document.getElementById("tab7").style.display = "none";
 	
 	document.getElementById("tab1link").style.backgroundColor = "#FFFFFF";
 	document.getElementById("tab2link").style.backgroundColor = "#FFFFFF";
 	document.getElementById("tab3link").style.backgroundColor = "#FFFFFF";
 	document.getElementById("tab4link").style.backgroundColor = "#FFFFFF";
 	document.getElementById("tab5link").style.backgroundColor = "#FFFFFF";
+	document.getElementById("tab7link").style.backgroundColor = "#FFFFFF";
 	
 	document.getElementById("tab6").style.display = "block";
 	document.getElementById("tab6link").style.backgroundColor = "#9999FF";
+}
+function seventhTab()
+{
+	document.getElementById("tab1").style.display = "none";
+	document.getElementById("tab2").style.display = "none";
+	document.getElementById("tab3").style.display = "none";
+	document.getElementById("tab4").style.display = "none";
+	document.getElementById("tab5").style.display = "none";
+	document.getElementById("tab6").style.display = "none";
+	
+	document.getElementById("tab1link").style.backgroundColor = "#FFFFFF";
+	document.getElementById("tab2link").style.backgroundColor = "#FFFFFF";
+	document.getElementById("tab3link").style.backgroundColor = "#FFFFFF";
+	document.getElementById("tab4link").style.backgroundColor = "#FFFFFF";
+	document.getElementById("tab5link").style.backgroundColor = "#FFFFFF";
+	document.getElementById("tab6link").style.backgroundColor = "#FFFFFF";
+	
+	document.getElementById("tab7").style.display = "block";
+	document.getElementById("tab7link").style.backgroundColor = "#9999FF";
 }
 /*------------------------------------------------------------*/
 function reevaluateMoveButtons()
@@ -545,8 +576,38 @@ function declineNameChange(event)
 }
 function sendMailNameChange(email)
 {
-	fifthTab();
+	sixthTab();
 	document.getElementById("emailAddressee").value = email;
+}
+/*------------------------------------------------------------*/
+function acceptClassNameChange(event)
+{
+	//Získání současného jména
+	var oldName = event.target.parentNode.parentNode.parentNode.childNodes[0].innerHTML;
+	
+	//Získání nového jména
+	var newName = event.target.parentNode.parentNode.parentNode.childNodes[1].innerHTML;
+	
+	//Posílání požadavku na ovlivnění databáze
+	postRequest("php/ajax/resolveClassNameChange.php", null, null, true, oldName, newName);
+	
+	//Odstranění požadavku z DOM
+	event.target.parentNode.parentNode.parentNode.parentNode.removeChild(event.target.parentNode.parentNode.parentNode);
+}
+function declineClassNameChange(event)
+{
+	//Získat důvod zamítnutí.
+	var reason = prompt("Zadejte prosím důvod zamítnutí.\nTento důvod obdrží správce třídy e-mailem (pokud jej zadal).")
+	if (reason === null || reason.length === 0){return;}	//Zrušit odmítnutí v případě nezadání důvodu či kliknutí na "Zrušit"
+	
+	//Získání současného jména
+	var oldName = event.target.parentNode.parentNode.parentNode.childNodes[0].innerHTML;
+	
+	//Posílání požadavku na ovlivnění databáze
+	postRequest("php/ajax/resolveClassNameChange.php", null, null, false, oldName, null, null, null, reason);
+	
+	//Odstranění požadavku z DOM
+	event.target.parentNode.parentNode.parentNode.parentNode.removeChild(event.target.parentNode.parentNode.parentNode);
 }
 /*------------------------------------------------------------*/
 function updateEmailPreview()

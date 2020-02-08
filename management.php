@@ -74,8 +74,9 @@
 			<a id="tab2link" onclick="secondTab()">Správa účtů</a>
 			<a id="tab3link" onclick="thirdTab()">Správa hlášení</a>
 			<a id="tab4link" onclick="fourthTab()">Správa změn jmen</a>
-			<a id="tab5link" onclick="fifthTab()">Poslat e-mail</a>
-			<a id="tab6link" onclick="sixthTab()">Ovládání databáze</a>
+			<a id="tab5link" onclick="fifthTab()">Správa jmen tříd</a>
+			<a id="tab6link" onclick="sixthTab()">Poslat e-mail</a>
+			<a id="tab7link" onclick="seventhTab()">Ovládání databáze</a>
 			<a href="list.php" style="background-color: #FFFF99">Návrat</a>
 		</nav>
 		<div id="container">
@@ -288,6 +289,60 @@
 				</table>
 			</div>
 			<div id="tab5">
+				<table border=1>
+					<tr>
+    					<th>Současné jméno</th>
+    					<th>Požadované jméno</th>
+    					<th>Akce</th>
+    				</tr>
+					<?php
+					   $query = "SELECT tridy.nazev,zadosti_jmena_tridy.nove,tridy.spravce FROM zadosti_jmena_tridy JOIN tridy ON tridy.tridy_id = zadosti_jmena_tridy.tridy_id ORDER BY cas ASC LIMIT 25";
+					   $result = mysqli_query($connection, $query);
+					   if (!$result)
+					   {
+					       echo "Nastala chyba SQL: ".mysqli_error($connection);
+					   }
+					   while ($row = mysqli_fetch_array($result))
+					   {
+					        echo "<tr>";
+					           echo "<td>";
+					               echo $row['nazev'];
+					           echo "</td>";
+					           echo "<td>";
+					               echo $row['nove'];
+					           echo "</td>";
+					           echo "<td>";
+					               echo "<button class='nameChangeAction activeBtn' onclick='acceptClassNameChange(event)' title='Přijmout'>";
+					                   echo "<img src='images/tick.gif'/>";
+                                   echo "</button>";
+                                   echo "<button class='nameChangeAction activeBtn' onclick='declineClassNameChange(event)' title='Zamítnout'>";
+                                        echo "<img src='images/cross.gif'/>";
+                                   echo "</button>";
+                                   //Kontrola, jestli má správce zadaný e-mail
+                                   $query = "SELECT email FROM uzivatele WHERE uzivatele_id='".$row['spravce']."' LIMIT 1";
+                                   $email = mysqli_query($connection, $query);
+                                   if (!$result)
+                                   {
+                                       echo "Nastala chyba SQL: ".mysqli_error($connection);
+                                   }
+                                   $email = mysqli_fetch_array($email)['email'];
+                                   if (empty($email))
+                                   {
+                                       echo "<button class='nameChangeAction grayscale' disabled>";
+                                   }
+                                   else
+                                   {
+                                       echo "<button class='nameChangeAction activeBtn' onclick='sendMailNameChange(\"$email\")' title='Poslat e-mail'>";
+                                   }
+                                        echo "<img src='images/mail.gif'/>";
+                                   echo "</button>";
+                               echo "</td>";
+					        echo "</tr>";
+					   }
+					?>
+				</table>
+			</div>
+			<div id="tab6">
 				<div id="email">
 					<span>Adresát: </span>
 					<input id="emailAddressee" type=email maxlength=255 />
@@ -307,7 +362,7 @@
 					</div>
 				</div>
 			</div>
-			<div id="tab6">
+			<div id="tab7">
 				<div id="sql">
 					<div id="sqlWarning">
 						<span>Neuvědomělé používání tohoto nástroje může mít destruktivní účinky. Používejte tento nástroj pouze v případě, že jste si naprosto jistí tím, co děláte!</span>
