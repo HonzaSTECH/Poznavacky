@@ -155,6 +155,9 @@ AJAX serverové skripty:
 	register.php
 		Spouští se v: index.js
 		Zpracovává a případně ukládá data odeslaná z registračního formuláře a případně přihlašuje uživatele
+	resolveClassNameChange.php
+		Spouští se v: management.js
+		Odstraňuje vyřízenou žádost o změnu názvu třídy z databáze a popřípadě mění jméno třídy. Dostupné pouze pro uživatele se statusem "administrator"
 	resolveNameChange.php
 		Spouští se v: management.js
 		Odstraňuje vyřízenou žádost o změnu jména z databáze a popřípadě mění jméno žadatele. Dostupné pouze pro uživatele se statusem "administrator"

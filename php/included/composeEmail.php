@@ -2,8 +2,10 @@
     /**
      * $type: určuje typ e-mailu
      *      0: obnova hesla
-     *      1: potvrzení změny jména
-     *      2: zamítnutí změny jména
+     *      1: potvrzení změny jména uživatele
+     *      2: zamítnutí změny jména uživatele
+     *      3: potvrzení změny jména třídy
+     *      4: zamítnutí změny jména třídy
      */
     function getEmail($type, $data)
     {
@@ -37,18 +39,34 @@
                 <p>Na základě vaší žádosti na <a href='".$_SERVER['SERVER_NAME']."'>".$_SERVER['SERVER_NAME']."</a> bylo změněno vaše uživatelské jméno na <b>".$data['newName']."</b>.
                 <br>Pod svým starým jménem (<b>".$data['oldName']."</b>) se od nynějška již nebudete moci přihlásit.</p>
                 <p>Pokud si přejete změnit jméno zpět na staré nebo nějaké úplně jiné, můžete tak učinit odesláním další žádosti o změnu jména v nastavení vašeho uživatelského účtu.</p>
-                <p>Neodesílali jste žádnou žádost na změnu uživatelského jména? Je možné, že někdo získal přístup k vašemu účtu. Doporučujeme vám si co nejdříve změnit vaše heslo. Pokud se nemůžete přihlásit, kontaktujte nás prosím na e-mailové adrese <a href='mailto:poznavacky@email.com'>poznavacky@email.com</a>".
-                "</p>
+                <p>Neodesílali jste žádnou žádost na změnu uživatelského jména? Je možné, že někdo získal přístup k vašemu účtu. Doporučujeme vám si co nejdříve změnit vaše heslo. Pokud se nemůžete přihlásit, kontaktujte nás prosím na e-mailové adrese <a href='mailto:poznavacky@email.com'>poznavacky@email.com</a>.</p>
             ";
         }
         if ($type === 2)
         {
             $email .= "
-            <p>Vaše žádost o změnu uživatelského jména na <a href='".$_SERVER['SERVER_NAME']."'>".$_SERVER['SERVER_NAME']."</a> byla administrátorem zamítnuta.
-            <br><b>Důvod zamítnutí: <span style='color:#990000'>".$data['reason']."</span>.</b><br>
-            Vaše současné jméno (<b>".$data['oldName']."</b>) tak stále zůstává platným přihlašovacím údajem.</p>
-            <p>Pokud si jméno stále chcete změnit, můžete odeslat novou žádost o změnu. Neodesílejte však prosím žádost o změnu na jméno, které bylo zamítnuto.</p>
-            <p>Neodesílali jste žádnou žádost na změnu uživatelského jména? Je možné, že někdo získal přístup k vašemu účtu. Doporučujeme vám si co nejdříve změnit vaše heslo. Pokud se nemůžete přihlásit, kontaktujte nás prosím na e-mailové adrese <a href='mailto:poznavacky@email.com'>poznavacky@email.com</a>.</p>
+                <p>Vaše žádost o změnu uživatelského jména na <a href='".$_SERVER['SERVER_NAME']."'>".$_SERVER['SERVER_NAME']."</a> byla administrátorem zamítnuta.
+                <br><b>Důvod zamítnutí: <span style='color:#990000'>".$data['reason']."</span>.</b><br>
+                Vaše současné jméno (<b>".$data['oldName']."</b>) tak stále zůstává platným přihlašovacím údajem.</p>
+                <p>Pokud si jméno stále chcete změnit, můžete odeslat novou žádost o změnu. Neodesílejte však prosím žádost o změnu na jméno, které bylo zamítnuto.</p>
+                <p>Neodesílali jste žádnou žádost na změnu uživatelského jména? Je možné, že někdo získal přístup k vašemu účtu. Doporučujeme vám si co nejdříve změnit vaše heslo. Pokud se nemůžete přihlásit, kontaktujte nás prosím na e-mailové adrese <a href='mailto:poznavacky@email.com'>poznavacky@email.com</a>.</p>
+            ";
+        }
+        if ($type === 3)
+        {
+            $email .= "
+                <p>Na základě vaší žádosti na <a href='".$_SERVER['SERVER_NAME']."'>".$_SERVER['SERVER_NAME']."</a> byl změněn název vámi spravované třídy <b>".$data['oldName']."</b> na <b>".$data['newName']."</b>.
+                <p>Pokud si přejete změnit název třídy zpět na starý nebo nějaký úplně jiný, můžete tak učinit odesláním další žádosti o změnu názvu ve správě třídy.</p>
+                <p>Neodesílali jste žádnou žádost na změnu názvu třídy? Je možné, že někdo získal přístup k vašemu účtu. Doporučujeme vám si co nejdříve změnit vaše heslo. Pokud se nemůžete přihlásit, kontaktujte nás prosím na e-mailové adrese <a href='mailto:poznavacky@email.com'>poznavacky@email.com</a>.</p>
+            ";
+        }
+        if ($type === 4)
+        {
+            $email .= "
+                <p>Vaše žádost o změnu názvu vámi spravované třídy <b>".$data['oldName']."</b> na <a href='".$_SERVER['SERVER_NAME']."'>".$_SERVER['SERVER_NAME']."</a> byla administrátorem zamítnuta.
+                <br><b>Důvod zamítnutí: <span style='color:#990000'>".$data['reason']."</span>.</b><br>
+                <p>Pokud stále chcete změnit název třídy, můžete odeslat novou žádost o změnu. Neodesílejte však prosím žádost o změnu na název, který byl zamítnut.</p>
+                <p>Neodesílali jste žádnou žádost na změnu názvu třídy? Je možné, že někdo získal přístup k vašemu účtu. Doporučujeme vám si co nejdříve změnit vaše heslo. Pokud se nemůžete přihlásit, kontaktujte nás prosím na e-mailové adrese <a href='mailto:poznavacky@email.com'>poznavacky@email.com</a>.</p>
             ";
         }
         

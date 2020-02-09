@@ -61,7 +61,7 @@
                     <td class='table_action'>
                         <button id="changeNameButton" class="button" onclick="requestNameChange()">Vyžádat změnu</button>
                         <div id="changeNameInput">
-                            <input class="text" id="changeNameInputField" type=text placeholder="Nové jméno" maxlength=31 />
+                            <input class="text" id="changeNameInputField" type=text placeholder="Nový název" maxlength=31 />
                             <button class="button" id="changeNameConfirm" onclick="confirmNameChange()">Potvrdit</button>
                         </div>
                     </td>
