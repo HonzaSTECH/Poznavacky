@@ -93,7 +93,10 @@
                         </select>
                     </td>
                     <td class='table_action'>
-                        <input id='statusCodeInput' type=text maxlength=4 value=<?php echo $classData['kod']; ?> style='width: 2rem;' oninput="statusChange()"/>
+                    	<div id='statusCodeInput'>
+                    		<span>Vstupní kód: </span>
+                        	<input id='statusCodeInputField' type=text maxlength=4 value=<?php echo $classData['kod']; ?> style='width: 2rem;' oninput="statusChange()"/>
+                        </div>
                         <button id="statusSaveButton" class="button" onclick="confirmStatusChange()">Aktualizovat</button>
                     </td>
                 </tr>

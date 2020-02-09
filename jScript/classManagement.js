@@ -6,7 +6,7 @@ window.onload = function()
 	//Získání globálních proměnných z dokumentu
 	classId = document.getElementById("id").innerHTML;
     initialStatus = document.getElementById("statusInput").value;
-    initialCode = document.getElementById("statusCodeInput").value;
+    initialCode = document.getElementById("statusCodeInputField").value;
     
     //Správně zobrazit tlačítko a vstupní pole pro kód
     statusChange();
@@ -55,7 +55,7 @@ function statusChange()
     }
     //Sem se program dostane pouze pokud je třída nastavována jako soukromá --> zobraz vstupní kód
     document.getElementById("statusCodeInput").style.display = "inline-block";
-    if ((document.getElementById("statusCodeInput").value === initialCode && document.getElementById("statusInput").value === initialStatus) || document.getElementById("statusCodeInput").value.length !== 4 || parseInt(document.getElementById("statusCodeInput").value) != document.getElementById("statusCodeInput").value)
+    if ((document.getElementById("statusCodeInputField").value === initialCode && document.getElementById("statusInput").value === initialStatus) || document.getElementById("statusCodeInputField").value.length !== 4 || parseInt(document.getElementById("statusCodeInputField").value) != document.getElementById("statusCodeInputField").value)
     {
         //Kód není platný --> skryj tlačítko
         document.getElementById("statusSaveButton").style.display = "none";
@@ -70,7 +70,7 @@ function statusChange()
 function confirmStatusChange()
 {
     var newStatus = document.getElementById("statusInput").value;
-    var code = document.getElementById("statusCodeInput").value;
+    var code = document.getElementById("statusCodeInputField").value;
     
     if (newStatus === "Soukromá" && (code.length !== 4 || parseInt(code) != code))
     {
