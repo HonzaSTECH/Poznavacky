@@ -28,7 +28,7 @@
         die();
     }
     $ip = $_SERVER['REMOTE_ADDR'];
-    filelog("Uživatel $userName odebral uživatele $kicked ze třídy s ID $cId.");
+    filelog("Uživatel $userName odebral uživatele $kicked ze třídy s ID $cId z IP adresy $ip.");
     
     //Změna proměnných JavaScriptu (po obdržení odpovědi je odpověď vyhodnocena jako JS kód)
     echo "updateMembers();";
