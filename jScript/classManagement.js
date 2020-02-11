@@ -129,10 +129,6 @@ function inviteUser()
 {
     var user = document.getElementById("inviteUserInput").value;
     postRequest("php/ajax/inviteUser.php", responseFunc, responseFunc, classId, user);
-    
-    //Reset HTML
-    document.getElementById("inviteUserInput").value = "";
-    inviteFormHide();
 }
 
 function postRequest(url, success = null, error = null, classId, newName = null, newStatus = null, newCode = null){
