@@ -450,6 +450,22 @@ th {
 #changeNameInput {
     display: none;
 }
+.actionButton {
+    margin-left: 10px;
+    margin-right: 10px;
+    border: 0;
+    padding: 0;
+    background-color: #FFF;
+    height: 16px;
+    width: 16px;
+	transition: 0s;
+}
+.actionButton img {
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
+    padding-left: 10px;
+	padding-right: 10px;
+}
 /* -------------------------------------------------- obrazky + posun obrazku */
 .img {
     box-sizing: border-box;

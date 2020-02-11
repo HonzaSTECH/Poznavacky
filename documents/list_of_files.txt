@@ -104,6 +104,9 @@ AJAX serverové skripty:
 	getGroups.php
 		Spouští se v: list.js
 		Získává seznam skupin v jisté třídě z databáze a vrací je javascriptu k zobrazení na stránce
+	getMembers.php
+		Spouští se v: classManagement.js
+		Získává seznam uživatelů, kteří jsou členy dané třídy, kromě jejího správce. Pokud je třída veřejná, vrátí pouze zprávu, že tato funkce není dostupná
 	getParts.php
 		Spouští se v: list.js
 		Získává seznam částí v jisté skupině z databáze a vrací je javascriptu k zobrazení na stránce
@@ -134,6 +137,9 @@ AJAX serverové skripty:
 	changeTheme.php
 		Spouští se v accountSettings.js
 		Přepíná zvolené barevné schéma stránek pro přihlášeného uživatele
+	kickMember.php
+		Spouští se v classManagement.js
+		Odstraňuje členství uživatele ze třídy. Dostupné pouze pro správce dané třídy
 	leaveClass.php
 		Spouští se v list.js
 		Odstraňuje členství přihllášeného uživatele ze soukromé nebo uzamčené třídy
@@ -190,6 +196,9 @@ Vložené serverové skripty:
 	getGroups.php
 		Zahrnuje se do: list.php
 		Získává seznam skupin v jisté třídě z databáze a zobrazuje je při načítání stránky
+	getMembers.php
+		Zahrnuje se do: classManagement.php
+		Získává seznam uživatelů, kteří jsou členy dané třídy, kromě jejího správce. Pokud je třída veřejná, vrátí pouze zprávu, že tato funkce není dostupná
 	getParts.php
 		Zahrnuje se do: list.php
 		Získává seznam částí v jisté skupině z databáze a zobrazuje je při načítání stránky

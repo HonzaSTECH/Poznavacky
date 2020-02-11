@@ -102,7 +102,11 @@
                 </tr>
                 <tr>
                     <td class='table_left'>Členové třídy</td>
-                    <td class='table_right' id="username"><!-- TODO --></td>
+                    <td id='membersCell' class='table_right' colspan=2>
+                    	<?php
+                	       include 'php/getMembers.php';
+                    	?>
+                    </td>
                     <td class='table_action'></td>
                 </tr>
             </table>

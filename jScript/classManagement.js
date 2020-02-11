@@ -103,7 +103,20 @@ function confirmStatusChange()
     //Reset HTML
     document.getElementById("changeNameInput").style.display = "statusSaveButton";
 }
+function updateMembers()
+{
+	postRequest("php/getMembers.php", updateMembersTable, responseFunc, classId);
+}
 
+function kickUser(event)
+{
+    var user = event.target.parentNode.parentNode.parentNode.childNodes[0].innerText;
+    if (!confirm("Opravdu chcete odebrat uživatele " + user + " ze třídy?"))
+    {
+        return;
+    }
+    postRequest("php/ajax/kickMember.php", responseFunc, responseFunc, classId, user);
+}
 function postRequest(url, success = null, error = null, classId, newName = null, newStatus = null, newCode = null){
     var req = false;
     //Creating request
@@ -153,4 +166,8 @@ function postRequest(url, success = null, error = null, classId, newName = null,
 function responseFunc(response)
 {
     eval(response);
+}
+function updateMembersTable(response)
+{
+    document.getElementById("membersCell").innerHTML = response;
 }
