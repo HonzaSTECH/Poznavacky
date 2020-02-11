@@ -55,9 +55,7 @@
     $result = mysqli_query($connection, $query);
     if (!$result)
     {
-        echo "alert(".mysqli_error($connection).");";
-        echo $query;
-        echo "swal('Vyskytla se chyba při práci s databází. Pro více informací přejděte na ".$_SERVER['SERVER_NAME']."/errSql.html','','error')";
+        echo "alert('Vyskytla se chyba při práci s databází. Pro více informací přejděte na ".$_SERVER['SERVER_NAME']."/errSql.html');";
         die();
     }
     $ip = $_SERVER['REMOTE_ADDR'];
@@ -71,3 +69,4 @@
         echo "initialCode = $code;";
     }
     echo "statusChange();";
+    echo "updateMembers();";
