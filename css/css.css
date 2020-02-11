@@ -283,6 +283,9 @@ label:hover:before {
 	height: 100vh;
 	width: 100vw;
 }
+#invitationsContent{
+    display: none;
+}
 /* - - - - - - - - - - - - - - - - - - - - changelog */
 #changelog, #newClassFormContainer {
     z-index: 9;

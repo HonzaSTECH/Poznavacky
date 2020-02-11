@@ -51,6 +51,43 @@
         <button class='button' onclick='closeClassCode()'>Zpět</button>
     </div>";
     
+    //Získávání pozvánek
+    $query = "SELECT tridy.tridy_id,tridy.nazev,(SELECT jmeno FROM tridy JOIN uzivatele ON uzivatele.uzivatele_id = tridy.spravce WHERE tridy_id = pozvanky.tridy_id) AS 'spravce' FROM pozvanky JOIN tridy ON tridy.tridy_id = pozvanky.tridy_id WHERE pozvanky.uzivatele_id = $userId ORDER BY pozvanky.expirace;";
+    $result = mysqli_query($connection, $query);
+    echo "
+    <div id='invitationsButton'>
+        <button class='button' onclick='showInvitations()'>Pozvánky do tříd (".mysqli_num_rows($result).")</button>
+    </div>";
+    if (mysqli_num_rows($result) > 0)
+    {
+        echo "
+        <div id='invitationsContent'>
+            <table id='invitationsTable'>
+                <tr>
+                    <th>Název třídy</th>
+                    <th>Správce</th>
+                    <th>Akce</th>
+                </tr>
+        ";
+        while ($invitation = mysqli_fetch_array($result))
+        {
+            echo "
+            <tr>
+                <td>".$invitation['nazev']."</td>
+                <td>".$invitation['spravce']."</td>
+                <td>
+                    <button class='actionButton' onclick='acceptInvitation(event, ".$invitation['tridy_id'].")' title='Přijmout pozvánku'><img src='images/tick.gif'/></button>
+                    <button class='actionButton' onclick='declineInvitation(event, ".$invitation['tridy_id'].")' title='Odebrat pozvánku'><img src='images/cross.gif'/></button>
+                </td>
+            </tr>
+            ";
+        }
+        echo "
+            </table>
+        </div>
+        ";
+    }
+    
     //Vymazat zvolenou třídu ze $_SESSION
     $_SESSION['class'] = 0;
     

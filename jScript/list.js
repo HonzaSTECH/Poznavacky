@@ -39,6 +39,25 @@ function submitClassCode()
     var code = document.getElementById("classCodeInput").value;
     postRequest("php/ajax/verifyClassCode.php", newClasses, alertResponse, null, null, code, null);
 }
+function showInvitations()
+{
+    document.getElementById("invitationsButton").style.display = "none";
+    document.getElementById("invitationsContent").style.display = "block";
+}
+function acceptInvitation(event, cId)
+{
+    //Odstranění pozvánky z DOM
+	event.target.parentNode.parentNode.parentNode.parentNode.removeChild(event.target.parentNode.parentNode.parentNode);
+	
+	getRequest("php/ajax/answerInvitation.php?accepted=1&classId=" + cId);
+}
+function declineInvitation(event, cId)
+{
+	//Odstranění pozvánky z DOM
+	event.target.parentNode.parentNode.parentNode.parentNode.removeChild(event.target.parentNode.parentNode.parentNode);
+	
+	getRequest("php/ajax/answerInvitation.php?accepted=0&classId=" + cId);
+}
 function choose(event, depth, option = undefined, type = undefined)
 {
 	if (event !== null && event.target.id === 'listAction')
