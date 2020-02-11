@@ -137,6 +137,9 @@ AJAX serverové skripty:
 	changeTheme.php
 		Spouští se v accountSettings.js
 		Přepíná zvolené barevné schéma stránek pro přihlášeného uživatele
+	inviteUser.php
+		Spouští se v classManagement.js
+		Vkládá novou pozvánku do databáze. Dostupné pouze pro správce dané třídy
 	kickMember.php
 		Spouští se v classManagement.js
 		Odstraňuje členství uživatele ze třídy. Dostupné pouze pro správce dané třídy
