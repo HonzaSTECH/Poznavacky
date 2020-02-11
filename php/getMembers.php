@@ -52,3 +52,11 @@
     }
     
     echo "</table>";
+    echo "<button class='actionButton' onclick='inviteFormShow()' title='Pozvat nového člena'><img src='images/plus.gif'></button>";
+    echo "
+    <div id='inviteForm'>
+        <input id='inviteUserInput' placeholder='Jméno uživatele' type='text' maxlength=31>
+        <button onclick='inviteUser()' class='button'>Pozvat</button>
+        <button onclick='inviteFormHide()' class='button'>Zrušit</button>
+    </div>
+    ";

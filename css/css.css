@@ -466,6 +466,9 @@ th {
     padding-left: 10px;
 	padding-right: 10px;
 }
+#inviteForm {
+    display: none;
+}
 /* -------------------------------------------------- obrazky + posun obrazku */
 .img {
     box-sizing: border-box;

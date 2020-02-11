@@ -117,6 +117,20 @@ function kickUser(event)
     }
     postRequest("php/ajax/kickMember.php", responseFunc, responseFunc, classId, user);
 }
+function inviteFormShow()
+{
+    document.getElementById("inviteForm").style.display = "block";
+}
+function inviteFormHide()
+{
+    document.getElementById("inviteForm").style.display = "none";
+}
+function inviteUser()
+{
+    var user = document.getElementById("inviteUserInput").value;
+    //TODO
+}
+
 function postRequest(url, success = null, error = null, classId, newName = null, newStatus = null, newCode = null){
     var req = false;
     //Creating request
