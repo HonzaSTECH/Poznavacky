@@ -130,6 +130,21 @@ function inviteUser()
     var user = document.getElementById("inviteUserInput").value;
     postRequest("php/ajax/inviteUser.php", responseFunc, responseFunc, classId, user);
 }
+function createTest()
+{
+    //TODO
+	alert("TODO");
+}
+function editTest(event,id)
+{
+    //TODO
+	alert("TODO");
+}
+function deleteTest(event,id)
+{
+    //TODO
+	alert("TODO");
+}
 function deleteClass()
 {
 	document.getElementById("deleteClassButton").style.display = "none";
