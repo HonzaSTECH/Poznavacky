@@ -37,6 +37,11 @@
         <link rel="mask-icon" href="images/safari-pinned-tab.svg" color="#ffc835">
         <meta name="theme-color" content="#ffffff">
         <title>Správa třídy</title>
+		<style>
+	        #changeNameInput, #inviteForm, #deleteClassInput1, #deleteClassInput2 {
+		      display: none;
+		    }
+		</style>
     </head>
     <body>
         <div class="container">
@@ -110,7 +115,18 @@
                     <td class='table_action'></td>
                 </tr>
             </table>
-            <br>
+            
+            <button class="button" id="deleteClassButton" onclick="deleteClass()">Zrušit třídu</button>
+			<div id="deleteClassInput1">
+				<input class="text" id="deleteClassInputField" type=password placeholder="Zadejte své heslo" maxlength=31 />
+				<button class="button" id="deleteClassConfirm" onclick="deleteClassVerify()">OK</button>
+			</div>
+			<div id="deleteClassInput2">
+				<span>Tato akce je nevratná. Opravdu si přejete trvale odstranit tuto třídu, včetně všech poznávaček, přířodnin a obrázků, které do ní patří?</span><br>
+				<button class="button" id="deleteClassFinalConfirm" onclick="deleteClassFinal()">Ano, zrušit třídu</button>
+				<button class="button" id="deleteClassFinalCancel" onclick="deleteClassCancel()">Ne, zachovat třídu</button>
+			</div>
+			<br>
             
             <a href="list.php"><button class="button">Zpět</button></a>
         </main>

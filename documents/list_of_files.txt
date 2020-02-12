@@ -135,8 +135,8 @@ AJAX serverové skripty:
 		Spouští se v: accountSettings.js
 		Přidává nový požadavek na změnu uživatelského jména po jeho zadání uživatelem
 	checkPassword.php
-		Spouští se v accountSettings.js
-		Kontroluje zadané heslo při odstraňování vlastního účtu. Slouží pouze pro orientaci, heslo je později zkontrolováno detailněji
+		Spouští se v accountSettings.js, classManagement.js
+		Kontroluje zadané heslo při odstraňování vlastního účtu nebo rušení třídy. Slouží pouze pro orientaci, heslo je později zkontrolováno detailněji
 	changeTheme.php
 		Spouští se v accountSettings.js
 		Přepíná zvolené barevné schéma stránek pro přihlášeného uživatele

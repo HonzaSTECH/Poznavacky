@@ -450,9 +450,6 @@ th {
     border-bottom: 0px solid var(--bila);
 }
 /* -------------------------------------------------- classManagement.php */
-#changeNameInput {
-    display: none;
-}
 .actionButton {
     margin-left: 10px;
     margin-right: 10px;
@@ -468,9 +465,6 @@ th {
     height: -webkit-fill-available;
     padding-left: 10px;
 	padding-right: 10px;
-}
-#inviteForm {
-    display: none;
 }
 /* -------------------------------------------------- obrazky + posun obrazku */
 .img {

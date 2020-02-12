@@ -130,8 +130,47 @@ function inviteUser()
     var user = document.getElementById("inviteUserInput").value;
     postRequest("php/ajax/inviteUser.php", responseFunc, responseFunc, classId, user);
 }
+function deleteClass()
+{
+	document.getElementById("deleteClassButton").style.display = "none";
+	document.getElementById("deleteClassInput1").style.display = "inline-block";
+}
 
-function postRequest(url, success = null, error = null, classId, newName = null, newStatus = null, newCode = null){
+function deleteClassVerify()
+{
+	var password = document.getElementById("deleteClassInputField").value;
+	
+	postRequest("php/ajax/checkPassword.php", deleteClassConfirm, responseFunc, null, null, null, null, password);
+}
+
+function deleteClassConfirm(response)
+{
+	if (response === "ok")
+	{
+	document.getElementById("deleteClassInput2").style.display = "inline-block";
+	document.getElementById("deleteClassInput1").style.display = "none";
+	}
+	else
+	{
+		alert("Špatné heslo.");
+		document.getElementById("deleteClassInputField").value = "";
+	}
+}
+
+function deleteClassFinal()
+{
+	var pass = document.getElementById("deleteClassInputField").value;
+	postRequest("php/ajax/deleteClass.php", responseFunc, null, classId, null, null, null, pass);
+}
+
+function deleteClassCancel()
+{
+	document.getElementById("deleteClassInputField").value = "";
+	document.getElementById("deleteClassButton").style.display = "inline-block";
+	document.getElementById("deleteClassInput2").style.display = "none";
+}
+
+function postRequest(url, success = null, error = null, classId, newName = null, newStatus = null, newCode = null, password = null){
     var req = false;
     //Creating request
     try
@@ -174,7 +213,7 @@ function postRequest(url, success = null, error = null, classId, newName = null,
     }
     req.open("POST", url, true);
     req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    req.send("id="+classId+"&name="+newName+"&status="+newStatus+"&code="+newCode);
+    req.send("id="+classId+"&name="+newName+"&status="+newStatus+"&code="+newCode+"&oldPass="+password);
     return req;
 }
 function responseFunc(response)
