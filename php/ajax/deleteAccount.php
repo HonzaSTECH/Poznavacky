@@ -24,8 +24,6 @@
     $result = mysqli_query($connection, $query);
     if (empty(mysqli_num_rows($result)))    //Uživatel nenalezen
     {
-        fileLog("Uživatel se pokusil odstranit neexistující účet ($user) z IP adresy $ip");
-        
         echo "swal('Něco se pokazilo.','Zkuste to prosím později, nebo se zkuste odhlásit a znovu přihlásit.','error')";
         filelog("Uživatel $loggedUser se pokusil odstranit svůj účet z IP adresy $ip, ale neuspěl kvůli neplatnému jménu.");
         die();
