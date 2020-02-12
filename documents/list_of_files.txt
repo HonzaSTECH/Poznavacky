@@ -77,6 +77,9 @@ AJAX serverové skripty:
 	deleteAccount.php
 		Spouští se v: accountSettings.js
 		Provádí odstranění účtu přihlášeného uživatele z databáze
+	deleteClass.php
+		Spouští se v: classManagement.js
+		Označuje v databázi třídu jako smazanou a přesouvá uživatele, kteří na list.php jako poslední navštívili podsložky třídy zpět na seznam tříd. Dostupné pouze pro správce dané třídy, který se ověřil heslem
 	deletePicture.php
 		Spouští se v: management.js
 		Provádí odstranění obrázku na základě hlášení. Dostupné pouze pro uživatele se statusem "administrator"

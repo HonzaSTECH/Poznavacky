@@ -13,7 +13,7 @@
             ";
     
     $userId = $_SESSION['user']['id'];
-    $query = "SELECT * FROM `tridy` WHERE status = 'public' OR tridy_id IN (SELECT tridy_id FROM clenstvi WHERE uzivatele_id = $userId);";
+    $query = "SELECT * FROM `tridy` WHERE smazana = 0 AND (status = 'public' OR tridy_id IN (SELECT tridy_id FROM clenstvi WHERE uzivatele_id = $userId));";
     $result = mysqli_query($connection, $query);
     if (mysqli_num_rows($result) === 0)
     {
