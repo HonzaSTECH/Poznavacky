@@ -49,14 +49,14 @@ function acceptInvitation(event, cId)
     //Odstranění pozvánky z DOM
 	event.target.parentNode.parentNode.parentNode.parentNode.removeChild(event.target.parentNode.parentNode.parentNode);
 	
-	getRequest("php/ajax/answerInvitation.php?accepted=1&classId=" + cId);
+	getRequest("php/ajax/answerInvitation.php?accepted=1&classId=" + cId, newClasses, alertResponse);
 }
 function declineInvitation(event, cId)
 {
 	//Odstranění pozvánky z DOM
 	event.target.parentNode.parentNode.parentNode.parentNode.removeChild(event.target.parentNode.parentNode.parentNode);
 	
-	getRequest("php/ajax/answerInvitation.php?accepted=0&classId=" + cId);
+	getRequest("php/ajax/answerInvitation.php?accepted=0&classId=" + cId, alertResponse, alertResponse);
 }
 function choose(event, depth, option = undefined, type = undefined)
 {
@@ -273,7 +273,10 @@ function loadParts(response)
 }
 function alertResponse(response)
 {
-    alert(response);
+	if (response.length > 0)
+    {
+		alert(response);
+    }
 }
 function applicationSent(response)
 {
@@ -282,6 +285,9 @@ function applicationSent(response)
 }
 function newClasses(response)
 {
-    alert(response);
+    if (response.length > 0)
+    {
+    	alert(response);
+    }
     choose(null,0);
 }

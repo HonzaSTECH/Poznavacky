@@ -71,6 +71,9 @@ Přesměrovávací stránky:
 		Odhlašuje uživatele vymazáním dat ze $_SESSION a odstraňuje cookie zajišťující trvalé přihlášení (pokud je přítomno)
 
 AJAX serverové skripty:
+	answerInvitation.php
+		Spouští se v: list.js
+		Přijíma nebo odmítá přihlášku do třídy a maže jí z databáze
 	deleteAccount.php
 		Spouští se v: accountSettings.js
 		Provádí odstranění účtu přihlášeného uživatele z databáze
