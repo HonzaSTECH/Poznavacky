@@ -44,7 +44,16 @@
 		</style>
     </head>
     <body>
-        <div class="container">
+        <div id="classManagementOverlay"></div>
+        <div id="testEditor" style="display:none;">
+        	<!-- Zde se zobrazuje ovládání pro úpravu poznávačky -->
+        	<div>
+        		<!-- TODO -->
+        		TODO
+        	</div>
+        	<button class="button" onclick="closeTestEditation(true)">Uložit změny</button>
+        	<button class="button" onclick="closeTestEditation(false)">Zavřít</button>
+        </div>
         <header>
             <h1>Správa třídy</h1>
         </header>

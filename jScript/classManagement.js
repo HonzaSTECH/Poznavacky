@@ -155,10 +155,27 @@ function updateTests(response)
 		eval(response);
 	}
 }
-function editTest(event,id)
+function editTest(id)
 {
-    //TODO
-	alert("TODO");
+    document.getElementById("classManagementOverlay").style.visibility = "visible";
+    document.getElementById("testEditor").style.display = "block";
+}
+function closeTestEditation(save)
+{
+	if (save === true)
+	{
+		//TODO - uložit změny do databáze
+	    document.getElementById("classManagementOverlay").style.visibility = "hidden";
+	    document.getElementById("testEditor").style.display = "none";
+	}
+	else
+	{
+		if (confirm("Opravdu chcete odejít? Vaše změny budou zahozeny!"))
+	    {
+			document.getElementById("classManagementOverlay").style.visibility = "hidden";
+		    document.getElementById("testEditor").style.display = "none";
+	    }
+	}
 }
 function deleteTest(id)
 {
