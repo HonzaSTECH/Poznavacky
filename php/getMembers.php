@@ -30,34 +30,34 @@
     if ($classData['status'] === 'public')
     {
         echo "<span>Funkce správy členů je dostupná pouze pro soukromé a uzamčené třídy.</span>";
-        die();
     }
     else
     {
         echo "<table id='membersTable'>";
         echo "<th>Uživatelské jméno</th><th>Akce</th>";
-    }
     
-    //Výběr všech uživatelů ve třídě
-    $query = "SELECT uzivatele.jmeno FROM clenstvi JOIN uzivatele ON clenstvi.uzivatele_id = uzivatele.uzivatele_id WHERE clenstvi.tridy_id = $classId AND uzivatele.uzivatele_id != $userId ORDER BY uzivatele.posledni_prihlaseni DESC;";
-    $result = mysqli_query($connection, $query);
-    while ($user = mysqli_fetch_array($result))
-    {
-        echo "<tr class='membersTableRow'>";
-        echo "<td class='membersTableCell'>".$user['jmeno']."</td>";
-        echo "<td class='membersTableCell'>";
-        echo "<button class='actionButton' onclick='kickUser(event)' title='Odstranit ze třídy'><img src='images/cross.gif'/></button>";
-        echo "</td>";
-        echo "</tr>";
-    }
     
-    echo "</table>";
-    echo "<button class='actionButton' onclick='inviteFormShow()' title='Pozvat nového člena'><img src='images/plus.gif'></button>";
-    echo "
-    <div id='inviteForm'>
-        <div id='inviteUserInfo'>Pozvaný uživatel bude mít týden na přijmutí pozvánky. Pozvání nelze odvolat.</div>
-        <input id='inviteUserInput' placeholder='Jméno uživatele' type='text' maxlength=31>
-        <button onclick='inviteUser()' class='button'>Pozvat</button>
-        <button onclick='inviteFormHide()' class='button'>Zrušit</button>
-    </div>
-    ";
+        //Výběr všech uživatelů ve třídě
+        $query = "SELECT uzivatele.jmeno FROM clenstvi JOIN uzivatele ON clenstvi.uzivatele_id = uzivatele.uzivatele_id WHERE clenstvi.tridy_id = $classId AND uzivatele.uzivatele_id != $userId ORDER BY uzivatele.posledni_prihlaseni DESC;";
+        $result = mysqli_query($connection, $query);
+        while ($user = mysqli_fetch_array($result))
+        {
+            echo "<tr class='membersTableRow'>";
+            echo "<td class='membersTableCell'>".$user['jmeno']."</td>";
+            echo "<td class='membersTableCell'>";
+            echo "<button class='actionButton' onclick='kickUser(event)' title='Odstranit ze třídy'><img src='images/cross.gif'/></button>";
+            echo "</td>";
+            echo "</tr>";
+        }
+        
+        echo "</table>";
+        echo "<button class='actionButton' onclick='inviteFormShow()' title='Pozvat nového člena'><img src='images/plus.gif'></button>";
+        echo "
+        <div id='inviteForm'>
+            <div id='inviteUserInfo'>Pozvaný uživatel bude mít týden na přijmutí pozvánky. Pozvání nelze odvolat.</div>
+            <input id='inviteUserInput' placeholder='Jméno uživatele' type='text' maxlength=31>
+            <button onclick='inviteUser()' class='button'>Pozvat</button>
+            <button onclick='inviteFormHide()' class='button'>Zrušit</button>
+        </div>
+        ";
+    }
