@@ -83,6 +83,9 @@ AJAX serverové skripty:
 	deleteClass.php
 		Spouští se v: classManagement.js
 		Označuje v databázi třídu jako smazanou a přesouvá uživatele, kteří na list.php jako poslední navštívili podsložky třídy zpět na seznam tříd. Dostupné pouze pro správce dané třídy, který se ověřil heslem
+	deleteGroup.php
+		Spouští se v: classManagement.js
+		Odstraňuje poznávačku z databáze, včetně všech jejích částí, přírodnin a obrázků. Dostupné pouze pro správce třídy, do které poznávačka patří
 	deletePicture.php
 		Spouští se v: management.js
 		Provádí odstranění obrázku na základě hlášení. Dostupné pouze pro uživatele se statusem "administrator"

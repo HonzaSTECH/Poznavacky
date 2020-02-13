@@ -45,7 +45,7 @@
                     </td>
                     <td class='testsTableCell'>
                         <button class='actionButton' onclick='editTest(event,".$test['poznavacky_id'].")' title='Upravit poznávačku'><img src='images/pencil.gif'></button>
-                        <button class='actionButton' onclick='deleteTest(event,".$test['poznavacky_id'].")' title='Odstranit poznávačku'><img src='images/cross.gif'/></button>
+                        <button class='actionButton' onclick='deleteTest(".$test['poznavacky_id'].")' title='Odstranit poznávačku'><img src='images/cross.gif'/></button>
                     </td>
                 </tr>
                 ";

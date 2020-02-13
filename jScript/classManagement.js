@@ -160,10 +160,13 @@ function editTest(event,id)
     //TODO
 	alert("TODO");
 }
-function deleteTest(event,id)
+function deleteTest(id)
 {
-    //TODO
-	alert("TODO");
+    var name = event.target.parentNode.parentNode.parentNode.childNodes[0].innerText;
+    if (confirm("Opravdu chcete trvale odstranit poznávačku " + name + " včetně všech jejích částí, přírodnin a obrázků? Tato akce je nevratná!"))
+    {
+    	postRequest("php/ajax/deleteGroup.php", updateTests, responseFunc, classId, id);
+    }
 }
 function deleteClass()
 {
