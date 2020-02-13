@@ -110,6 +110,9 @@ AJAX serverové skripty:
 	getGroups.php
 		Spouští se v: list.js
 		Získává seznam skupin v jisté třídě z databáze a vrací je javascriptu k zobrazení na stránce
+	getGroupsAdminTable.php
+		Spouští se v classManagement.js
+		Získává tabulku poznávaček v dané třídě včetně tlačítek akcí. Dostupné pouze pro správce dané třídy
 	getMembers.php
 		Spouští se v: classManagement.js
 		Získává seznam uživatelů, kteří jsou členy dané třídy, kromě jejího správce. Pokud je třída veřejná, vrátí pouze zprávu, že tato funkce není dostupná

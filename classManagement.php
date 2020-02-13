@@ -38,7 +38,7 @@
         <meta name="theme-color" content="#ffffff">
         <title>Správa třídy</title>
 		<style>
-	        #changeNameInput, #inviteForm, #deleteClassInput1, #deleteClassInput2 {
+	        #changeNameInput, #inviteForm, #deleteClassInput1, #deleteClassInput2, #createForm {
 		      display: none;
 		    }
 		</style>
@@ -115,41 +115,10 @@
                 </tr>
                 <tr>
                 	<td class='table_left'>Poznávačky</td>
-                	<td id='testsCall' class='table_right' colspan=2>
+                	<td id='testsCell' class='table_right' colspan=2>
                 		<?php
-                		    $query = "SELECT poznavacky_id,nazev,casti FROM poznavacky WHERE tridy_id = $classId";
-                		    $result = mysqli_query($connection, $query);
-                		    if (mysqli_num_rows($result) > 0)
-                		    {
-                		        echo "<table id='testsTable'>";
-                		        echo "
-                                <tr>
-                                    <th>Název</th>
-                                    <th>Části</th>
-                                    <th>Akce</th>
-                                </tr>
-                                ";
-                    		    while ($test = mysqli_fetch_array($result))
-                    		    {
-                    		        echo "
-                                    <tr class='testsTableRow'>
-                                        <td class='testsTableCell'>
-                                            ".$test['nazev']."
-                                        </td>
-                                        <td class='testsTableCell'>
-                                            ".$test['casti']."
-                                        </td>
-                                        <td class='testsTableCell'>
-                                            <button class='actionButton' onclick='editTest(event,".$test['poznavacky_id'].")' title='Upravit poznávačku'><img src='images/pencil.gif'></button>
-                                            <button class='actionButton' onclick='deleteTest(event,".$test['poznavacky_id'].")' title='Odstranit poznávačku'><img src='images/cross.gif'/></button>
-                                        </td>
-                                    </tr>
-                                    ";
-                    		    }
-                    		    echo "</table>";
-                		    }
+                		    include 'php/getGroupsAdminTable.php';
                 		?>
-                		<button class='actionButton' onclick='createTest()' title='Vytvořit novou poznávačku'><img src='images/plus.gif'></button>
                 	</td>
                 </tr>
             </table>
