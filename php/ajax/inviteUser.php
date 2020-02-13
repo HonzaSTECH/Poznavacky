@@ -23,14 +23,14 @@
     //Kontrola délky jména
     if (mb_strlen($invited) < 6)
     {
-        filelog("Uživatel $userName se pokusil pozvat uživatele do třídy s ID $cId, avšak neuspěl kvůli příliš krátkém jménu.");
-        echo "alert('Jméno uživatele musí být alespoň 6 znaků dlouhé.')";
+        filelog("Uživatel $userName se pokusil pozvat uživatele do třídy s ID $cId, avšak neuspěl kvůli příliš krátkému jménu.");
+        echo "alert('Jméno uživatele musí být alespoň 6 znaků dlouhé.');";
         die();
     }
     if (mb_strlen($invited) > 31)
     {
         filelog("Uživatel $userName se pokusil pozvat uživatele do třídy s ID $cId, avšak neuspěl kvůli příliš dlouhému jménu.");
-        echo "alert('Jméno uživatele nesmí být více než 31 znaků dlouhé.')";
+        echo "alert('Jméno uživatele nesmí být více než 31 znaků dlouhé.');";
         die();
     }
     
@@ -38,7 +38,7 @@
     if(strlen($invited) !== strspn($invited, '0123456789aábcčdďeěéfghiíjklmnňoópqrřsštťuůúvwxyýzžAÁBCČDĎEĚÉFGHIÍJKLMNŇOÓPQRŘSŠTŤUŮÚVWXYZŽ '))
     {
         filelog("Uživatel $userName se pokusil pozvat uživatele do třídy s ID $cId, avšak neuspěl kvůli neplatným znakům ve jméně.");
-        echo "alert('Jméno uživatele může obsahovat pouze písmena, číslice a mezery.')";
+        echo "alert('Jméno uživatele může obsahovat pouze písmena, číslice a mezery.');";
         die();
     }
     

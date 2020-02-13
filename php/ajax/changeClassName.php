@@ -23,7 +23,7 @@
     //Kontrola délky jména
     if (mb_strlen($name) < 6)
     {
-        filelog("Uživatel $userName se pokusil změnit jméno třídy s ID $cId, avšak neuspěl kvůli příliš krátkém jménu.");
+        filelog("Uživatel $userName se pokusil změnit jméno třídy s ID $cId, avšak neuspěl kvůli příliš krátkému jménu.");
         echo "alert('Jméno třídy musí být alespoň 6 znaků dlouhé.')";
         die();
     }
@@ -79,12 +79,12 @@
         $result = mysqli_query($connection, $query);
         if (!$result)
         {
-            echo "swal('Vyskytla se chyba při práci s databází.','Pro více informací přejděte na ".$_SERVER['SERVER_NAME']."/errSql.html','error')";
+            echo "alert('Vyskytla se chyba při práci s databází. Pro více informací přejděte na ".$_SERVER['SERVER_NAME']."/errSql.html');";
             die();
         }
         $ip = $_SERVER['REMOTE_ADDR'];
         filelog("Uživatel $userName změnil žádost o nové jméno třídy s ID $cId na $name z IP adresy $ip.");
-        echo "alert('O změnu jména bylo zažádáno. Nové jméno bude co nejdříve zkontrolováno a případně nahradí stávající jméno třídy. Jakmile bude vaše žádost vyřízena, obdržíte oznámění e-mailem (pokud jste jej přidali do svého účtu). Tato žádost o změnu přepsala vaší nevyřízenou žádost o změnu jména z minulosti.')";
+        echo "alert('O změnu jména bylo zažádáno. Nové jméno bude co nejdříve zkontrolováno a případně nahradí stávající jméno třídy. Jakmile bude vaše žádost vyřízena, obdržíte oznámění e-mailem (pokud jste jej přidali do svého účtu). Tato žádost o změnu přepsala vaší nevyřízenou žádost o změnu jména z minulosti.');";
     }
     else
     {
@@ -93,10 +93,10 @@
         $result = mysqli_query($connection, $query);
         if (!$result)
         {
-            echo "swal('Vyskytla se chyba při práci s databází. Pro více informací přejděte na ".$_SERVER['SERVER_NAME']."/errSql.html','','error')";
+            echo "alert('Vyskytla se chyba při práci s databází. Pro více informací přejděte na ".$_SERVER['SERVER_NAME']."/errSql.html');";
             die();
         }
         $ip = $_SERVER['REMOTE_ADDR'];
         filelog("Uživatel $userName zažádal o změnu jména třídy s ID $cId na $name z IP adresy $ip.");
-        echo "alert('O změnu jména bylo zažádáno. Nové jméno bude co nejdříve zkontrolováno a případně nahradí stávající jméno třídy. Jakmile bude vaše žádost vyřízena, obdržíte oznámění e-mailem (pokud jste jej přidali do svého účtu).')";
+        echo "alert('O změnu jména bylo zažádáno. Nové jméno bude co nejdříve zkontrolováno a případně nahradí stávající jméno třídy. Jakmile bude vaše žádost vyřízena, obdržíte oznámění e-mailem (pokud jste jej přidali do svého účtu).');";
     }

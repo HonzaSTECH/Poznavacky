@@ -55,7 +55,7 @@
         echo "
         <div id='inviteForm'>
             <div id='inviteUserInfo'>Pozvaný uživatel bude mít týden na přijmutí pozvánky. Pozvání nelze odvolat.</div>
-            <input id='inviteUserInput' placeholder='Jméno uživatele' type='text' maxlength=31>
+            <input id='inviteUserInput' placeholder='Jméno uživatele' type='text' maxlength=15>
             <button onclick='inviteUser()' class='button'>Pozvat</button>
             <button onclick='inviteFormHide()' class='button'>Zrušit</button>
         </div>
