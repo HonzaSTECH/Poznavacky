@@ -132,8 +132,28 @@ function inviteUser()
 }
 function createTest()
 {
-    //TODO
-	alert("TODO");
+	document.getElementById("createForm").style.display = "block";
+}
+function createTestSubmit()
+{
+	var name = document.getElementById("createInput").value;
+    postRequest("php/ajax/createGroup.php", updateTests, responseFunc, classId, name);
+}
+function createTestHide()
+{
+	document.getElementById("createForm").style.display = "none";
+}
+function updateTests(response)
+{
+	if (response.length === 0)	//Nedošlo k žádné chybě
+	{
+		document.getElementById("createInput").value = "";
+		postRequest("php/getGroupsAdminTable.php", updateTestsTable, responseFunc, classId);
+	}
+	else
+	{
+		eval(response);
+	}
 }
 function editTest(event,id)
 {
@@ -238,4 +258,8 @@ function responseFunc(response)
 function updateMembersTable(response)
 {
     document.getElementById("membersCell").innerHTML = response;
+}
+function updateTestsTable(response)
+{
+	document.getElementById("testsCell").innerHTML = response;
 }

@@ -73,7 +73,10 @@ Přesměrovávací stránky:
 AJAX serverové skripty:
 	answerInvitation.php
 		Spouští se v: list.js
-		Přijíma nebo odmítá přihlášku do třídy a maže jí z databáze
+		Přijímá nebo odmítá přihlášku do třídy a maže jí z databáze
+	createGroup.php
+		Spouští se v: classManagement.js
+		Vytváří novou prázdnou poznávačku ve třídě. Dostupné pouze pro správce dané třídy
 	deleteAccount.php
 		Spouští se v: accountSettings.js
 		Provádí odstranění účtu přihlášeného uživatele z databáze
