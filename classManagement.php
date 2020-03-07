@@ -47,9 +47,8 @@
         <div id="classManagementOverlay"></div>
         <div id="testEditor" style="display:none;">
         	<!-- Zde se zobrazuje ovládání pro úpravu poznávačky -->
-        	<div>
-        		<!-- TODO -->
-        		TODO
+        	<div id="testEditorContent">
+				<!-- HTML sem dodá PHP skrz AJAX -->        	
         	</div>
         	<button class="button" onclick="closeTestEditation(true)">Uložit změny</button>
         	<button class="button" onclick="closeTestEditation(false)">Zavřít</button>

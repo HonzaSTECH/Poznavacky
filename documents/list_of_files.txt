@@ -131,6 +131,9 @@ AJAX serverové skripty:
 	getRandomPic.php
 		Spouští se v: test.js
 		Získává a odesílá odkaz náhodného obrázku ze zvolené poznávačky
+	getTestContent.php
+		Spouští se v: classManagement.js
+		Získává HTML pro zobrazení v okně pro editaci poznávačky. Navrácené HTML obsahuje tabulku částí a přírodnin v poznávačce
 	changeClassName.php
 		Spouští se v: classManagement.php
 		Provádí vložení žádosti o změnu jména do databáze. Dostupné pouze pro správce dané třídy
@@ -250,7 +253,7 @@ Obrázky:
 		Používá se na: accountSettings.php, addPics.php, emailPasswordRecovery.php, index.php, learn.php, list.php, test.php (odkaz se nachází v themes.xml)
 		Obrázek pozadí stránek
 	cross.gif:
-		Používá se na: getReports.php, management.php
+		Používá se na: getGroupsAdminTable.php, getMembers.php, getReports.php, getTestContent.php, management.php
 		Obrázek zobrazovaný na tlačítkách jako zamítnout, odstranit či zrušit
 	dot.gif:
 		Používá se na: getReports.php
@@ -285,6 +288,9 @@ Obrázky:
 	info.svg
 		Používá se na: list.php
 		Ikona informací zobrazovaná s atrubutou "title" vedle vstupních polí s nejasným významem
+	list.gif
+		Používá se na: getTestContent.php
+		Obrázek zobrazovaný na tlačítku pro zobrazení seznamu přírodnin
 	logo.png:
 		Používá se na: composeEmail.php
 		Logo zobrazované v hlavičkách e-mailů. Shodné s favicon.ico
@@ -301,7 +307,7 @@ Obrázky:
 		Používá se na: learn.php (odkaz se nachází v getPics.php)
 		Obrázek zobrazující se místo obrázku přírodniny, pokud není nalezen žádný obrázek
 	pencil.gif:
-		Používá se na: management.php
+		Používá se na: getGropusAdminTable.php, getTestContent.php, management.php
 		Obrázek zobrazovaný na tlačítkách pro úpravy
 	plus.gif:
 		Používá se na: management.php

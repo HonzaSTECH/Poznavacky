@@ -155,10 +155,45 @@ function updateTests(response)
 		eval(response);
 	}
 }
-function editTest(id)
+function editTest(testId)
+{
+	postRequest("php/ajax/getTestContent.php", showTestEditation, responseFunc, classId, null, null, testId);
+}
+function showTestEditation(response)
 {
     document.getElementById("classManagementOverlay").style.visibility = "visible";
     document.getElementById("testEditor").style.display = "block";
+    document.getElementById("testEditorContent").innerHTML = response;
+    console.log(response);
+}
+function addPart()
+{
+    //TODO - implementovat funkci pro přidání části
+}
+function renamePart(event)
+{
+    //TODO - implementovat funkci pro přejmenování části
+}
+function removePart(event)
+{
+    //TODO - implementovat funkci pro odebrání části
+}
+function showNaturals(partId)
+{
+    //TODO - implementovat funkci pro zobrazení přírodnin
+    var naturalRows = document.getElementsByClassName("testEditorNaturalRow");
+    var cnt = naturalRows.length;
+    for (var i = 0; i < cnt; i++)
+    {
+        if (naturalRows[i].className.includes("part_id_" + partId))
+        {
+        	naturalRows[i].style.display = "block";
+        }
+        else
+        {
+        	naturalRows[i].style.display = "none";
+        }
+    }
 }
 function closeTestEditation(save)
 {
