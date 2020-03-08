@@ -134,6 +134,9 @@ AJAX serverové skripty:
 	getTestContent.php
 		Spouští se v: classManagement.js
 		Získává HTML pro zobrazení v okně pro editaci poznávačky. Navrácené HTML obsahuje tabulku částí a přírodnin v poznávačce
+	getTestReports.php
+		Spouští se v: classManagement.js
+		Získává HTML pro zobrazení v okně pro správku hlášení poznávačky. Navrácené HTML obsahuje tabulku hlášení, podobně jako na management.php
 	changeClassName.php
 		Spouští se v: classManagement.php
 		Provádí vložení žádosti o změnu jména do databáze. Dostupné pouze pro správce dané třídy
@@ -253,7 +256,7 @@ Obrázky:
 		Používá se na: accountSettings.php, addPics.php, emailPasswordRecovery.php, index.php, learn.php, list.php, test.php (odkaz se nachází v themes.xml)
 		Obrázek pozadí stránek
 	cross.gif:
-		Používá se na: getGroupsAdminTable.php, getMembers.php, getReports.php, getTestContent.php, management.php
+		Používá se na: getGroupsAdminTable.php, getMembers.php, getReports.php, getTestContent.php, getTestReports, management.php
 		Obrázek zobrazovaný na tlačítkách jako zamítnout, odstranit či zrušit
 	dot.gif:
 		Používá se na: getReports.php
@@ -268,7 +271,7 @@ Obrázky:
 		Používá se na: err403.html, err404.html, err500.html. err503.html a errSql.html
 		Obrázek pozadí chybových stránek
 	eye.gif:
-		Používá se na: getReports.php
+		Používá se na: getReports.php, getTestReports.php
 		Obrázek zobrazovaný na tlačítku pro zobrazení obrázku
 	favicon.ico
 		Používá se na: Všechny zobrazované stránky kromě err403.html, err404.html, err500.html. err503.html a errSql.html
@@ -297,8 +300,11 @@ Obrázky:
 	mail.gif:
 		Používá se na: management.php
 		Obrázek zobrazovaný na tlačítkách pro poslání e-mailu
+	management.gif
+		Používá se na: getGroupsAdminTable.php
+		Obrázek zobrazovaný na tlačítku pro správu poznávačky
 	minus.gif:
-		Používá se na: getReports.php
+		Používá se na: getReports.php, getTestReports.php
 		Obrázek zobrazovaný na tlačítkách pro odebírání
 	mstile-150x150.png
 		Používá se na: Všechny zobrazované stránky kromě err403.html, err404.html, err500.html. err503.html a errSql.html

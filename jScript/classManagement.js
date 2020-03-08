@@ -130,6 +130,33 @@ function inviteUser()
     var user = document.getElementById("inviteUserInput").value;
     postRequest("php/ajax/inviteUser.php", responseFunc, responseFunc, classId, user);
 }
+function manageTest(testId)
+{
+	postRequest("php/ajax/getTestReports.php", showTestReports, responseFunc, classId, null, null, testId);
+}
+function showTestReports(response)
+{
+    document.getElementById("classManagementOverlay").style.visibility = "visible";
+    document.getElementById("testReports").style.display = "block";
+    document.getElementById("testReportsContent").innerHTML = response;
+}
+function showPicture(url)
+{
+    //TODO
+}
+function deletePicture(picId)
+{
+    //TODO
+}
+function deleteReport(reportId)
+{
+    //TODO
+}
+function closeTestReports()
+{
+	document.getElementById("classManagementOverlay").style.visibility = "hidden";
+    document.getElementById("testReports").style.display = "none";
+}
 function createTest()
 {
 	document.getElementById("createForm").style.display = "block";
@@ -164,7 +191,6 @@ function showTestEditation(response)
     document.getElementById("classManagementOverlay").style.visibility = "visible";
     document.getElementById("testEditor").style.display = "block";
     document.getElementById("testEditorContent").innerHTML = response;
-    console.log(response);
 }
 function addPart()
 {
