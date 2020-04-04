@@ -77,7 +77,7 @@
                 <td>".$invitation['spravce']."</td>
                 <td>
                     <button class='actionButton' onclick='acceptInvitation(event, ".$invitation['tridy_id'].")' title='Přijmout pozvánku'><img src='images/tick.gif'/></button>
-                    <button class='actionButton' onclick='declineInvitation(event, ".$invitation['tridy_id'].")' title='Odebrat pozvánku'><img src='images/cross.gif'/></button>
+                    <button class='actionButton' onclick='declineInvitation(event, ".$invitation['tridy_id'].")' title='Odebrat pozvánku'><img src='images/cross.svg'/></button>
                 </td>
             </tr>
             ";

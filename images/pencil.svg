@@ -3,30 +3,30 @@
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 64 64" style="enable-background:new 0 0 64 64;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:#C1272D;stroke:#C1272D;stroke-width:0.25;stroke-miterlimit:10;}
-	.st1{display:none;}
+	.st0{display:none;}
+	.st1{display:inline;fill:#C1272D;stroke:#C1272D;stroke-width:0.25;stroke-miterlimit:10;}
 	.st2{display:inline;fill:#39B54A;stroke:#39B54A;stroke-width:0.25;stroke-miterlimit:10;}
 	.st3{display:inline;fill:none;stroke:#808080;stroke-width:12;stroke-miterlimit:10;}
 	.st4{display:inline;fill:#808080;stroke:#808080;stroke-width:0.25;stroke-miterlimit:10;}
-	.st5{display:inline;fill:#C1272D;}
-	.st6{display:inline;fill:#FBB03B;}
-	.st7{display:inline;fill:#C7B299;}
-	.st8{display:inline;fill:#FFBC64;}
-	.st9{display:inline;fill:#1A1A1A;}
+	.st5{fill:#C1272D;}
+	.st6{fill:#FBB03B;}
+	.st7{fill:#C7B299;}
+	.st8{fill:#FFBC64;}
+	.st9{fill:#1A1A1A;}
 </style>
-<g id="Vrstva_2">
-	<path class="st0" d="M17.16,4.74l42.11,42.11c3.42,3.42,3.42,9,0,12.42l0,0c-3.42,3.42-9,3.42-12.42,0L4.74,17.16
+<g id="Vrstva_2" class="st0">
+	<path class="st1" d="M17.16,4.74l42.11,42.11c3.42,3.42,3.42,9,0,12.42l0,0c-3.42,3.42-9,3.42-12.42,0L4.74,17.16
 		c-3.42-3.42-3.42-9,0-12.42l0,0C8.15,1.32,13.74,1.32,17.16,4.74z"/>
-	<path class="st0" d="M4.74,46.84L46.84,4.74c3.42-3.42,9-3.42,12.42,0l0,0c3.42,3.42,3.42,9,0,12.42L17.16,59.26
+	<path class="st1" d="M4.74,46.84L46.84,4.74c3.42-3.42,9-3.42,12.42,0l0,0c3.42,3.42,3.42,9,0,12.42L17.16,59.26
 		c-3.42,3.42-9,3.42-12.42,0l0,0C1.32,55.85,1.32,50.26,4.74,46.84z"/>
 </g>
-<g id="Vrstva_3" class="st1">
+<g id="Vrstva_3" class="st0">
 	<path class="st2" d="M23.22,54.84V9.16c0-4.83,3.95-8.78,8.78-8.78h0c4.83,0,8.78,3.95,8.78,8.78v45.68c0,4.83-3.95,8.78-8.78,8.78
 		h0C27.17,63.62,23.22,59.67,23.22,54.84z"/>
 	<path class="st2" d="M54.84,40.78H9.16c-4.83,0-8.78-3.95-8.78-8.78v0c0-4.83,3.95-8.78,8.78-8.78h45.68
 		c4.83,0,8.78,3.95,8.78,8.78v0C63.62,36.83,59.67,40.78,54.84,40.78z"/>
 </g>
-<g id="Vrstva_4" class="st1">
+<g id="Vrstva_4" class="st0">
 	<circle class="st3" cx="32" cy="32" r="17.42"/>
 	<path class="st4" d="M56.61,38.56h-2.64c-3.61,0-6.56-2.95-6.56-6.56v0c0-3.61,2.95-6.56,6.56-6.56h2.64
 		c3.61,0,6.56,2.95,6.56,6.56v0C63.17,35.61,60.22,38.56,56.61,38.56z"/>
@@ -45,7 +45,7 @@
 	<path class="st4" d="M9.68,45.41l1.87-1.87c2.55-2.55,6.72-2.55,9.28,0l0,0c2.55,2.55,2.55,6.72,0,9.28l-1.87,1.87
 		c-2.55,2.55-6.72,2.55-9.28,0l0,0C7.13,52.14,7.13,47.96,9.68,45.41z"/>
 </g>
-<g id="Vrstva_5" class="st1">
+<g id="Vrstva_5">
 	<path class="st5" d="M61.04,5.96l-3.21-3.21c-2.8-2.8-7.38-2.8-10.18,0l-0.13,0.13c-2.8,2.8-2.8,7.38,0,10.18l3.21,3.21
 		c2.8,2.8,7.38,2.8,10.18,0l0.13-0.13C63.84,13.34,63.84,8.76,61.04,5.96z"/>
 	

@@ -37,7 +37,7 @@
             echo "<td>$partName</td>";
             echo '<td>';
                 echo '<button class="actionButton" onclick="showNaturals('.$partId.')" title="Zobrazit přírodniny"><img src="images/list.gif"/></button>';
-                echo '<button class="actionButton" onclick="renamePart(event)" title="Přejmenovat část"><img src="images/pencil.gif"/></button>';
+                echo '<button class="actionButton" onclick="renamePart(event)" title="Přejmenovat část"><img src="images/pencil.svg"/></button>';
                 echo '<button class="actionButton" onclick="removePart(event)" title="Odstranit část (přírodniny i jejich obrázky zůstanou zachovány)"><img src="images/cross.svg"/></button>';
             echo '</td>';
         echo '</tr>';
@@ -74,7 +74,7 @@
                 echo '</select>';
             echo '</td>';
             echo '<td>';
-                echo '<button class="actionButton" onclick="renameNatural(event)" title="Přejmenovat přírodninu"><img src="images/pencil.gif"/></button>';
+                echo '<button class="actionButton" onclick="renameNatural(event)" title="Přejmenovat přírodninu"><img src="images/pencil.svg"/></button>';
                 echo '<button class="actionButton" onclick="removeNatural(event)" title="Odstranit přírodninu a všechny její obrázky"><img src="images/cross.svg"/></button>';
             echo '</td>';
         echo '</tr>';

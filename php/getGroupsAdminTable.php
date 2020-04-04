@@ -44,8 +44,8 @@
                         ".$test['casti']."
                     </td>
                     <td class='testsTableCell'>
-                        <button class='actionButton' onclick='manageTest(".$test['poznavacky_id'].")' title='Spravovat hlášení'><img src='images/management.gif'></button>
-                        <button class='actionButton' onclick='editTest(".$test['poznavacky_id'].")' title='Upravit poznávačku'><img src='images/pencil.gif'></button>
+                        <button class='actionButton' onclick='manageTest(".$test['poznavacky_id'].")' title='Spravovat hlášení'><img src='images/management.svg'></button>
+                        <button class='actionButton' onclick='editTest(".$test['poznavacky_id'].")' title='Upravit poznávačku'><img src='images/pencil.svg'></button>
                         <button class='actionButton' onclick='deleteTest(".$test['poznavacky_id'].")' title='Odstranit poznávačku'><img src='images/cross.svg'/></button>
                     </td>
                 </tr>
