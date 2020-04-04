@@ -286,7 +286,7 @@ Obrázky:
 		Používá se na: Všechny zobrazované stránky kromě err403.html, err404.html, err500.html. err503.html a errSql.html
 		Ikona stránek zobrazovaná v Chromu v nabídce nejpoužívanějších aplikací + v Androidu
 	imagePreview:
-		Používá se na: addPics.php
+		Používá se na: addPics.php, classManagement.php, classManagement.js
 		Obrázek zobrazující se místo náhledu, pokud není zadána adresa obrázku
 	info.svg
 		Používá se na: list.php

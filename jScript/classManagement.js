@@ -137,12 +137,20 @@ function manageTest(testId)
 function showTestReports(response)
 {
     document.getElementById("classManagementOverlay").style.visibility = "visible";
-    document.getElementById("testReports").style.display = "block";
+    document.getElementById("testReportsScreen").style.display = "block";
     document.getElementById("testReportsContent").innerHTML = response;
 }
 function showPicture(url)
 {
-    //TODO
+    document.getElementById("classManagementTestReportsOverlay").style.visibility = "visible";
+    document.getElementById("testReportsImagePreview").style.display = "block";
+    document.getElementById("previewImage").setAttribute("src", url);
+}
+function closeImagePreview()
+{
+	document.getElementById("classManagementTestReportsOverlay").style.visibility = "hidden";
+    document.getElementById("testReportsImagePreview").style.display = "none";
+    document.getElementById("previewImage").setAttribute("src", "images/imagePreview.png");
 }
 function deletePicture(picId)
 {

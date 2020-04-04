@@ -450,6 +450,21 @@ th {
     border-bottom: 0px solid var(--bila);
 }
 /* -------------------------------------------------- classManagement.php */
+#classManagementTestReportsOverlay
+{
+    visibility: hidden;
+    z-index: 10;
+    background-color: #000;
+	opacity: 0.5;
+	position: absolute;
+	height: 100vh;
+	width: 100vw;
+	
+}
+#testReportsImagePreview
+{
+    z-index: 11;
+}
 .actionButton {
     margin-left: 10px;
     margin-right: 10px;

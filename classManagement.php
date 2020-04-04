@@ -53,12 +53,19 @@
         	<button class="button" onclick="closeTestEditation(true)">Uložit změny</button>
         	<button class="button" onclick="closeTestEditation(false)">Zavřít</button>
         </div>
-        <div id="testReports" style="display:none;">
-        	<!-- Zde se zobrazuje ovládání pro správu hlášení -->
-        	<div id="testReportsContent">
-				<!-- HTML sem dodá PHP skrz AJAX -->        	
-        	</div>
-        	<button class="button" onclick="closeTestReports()">Zavřít</button>
+        <div id="testReportsScreen" style="display:none;">
+	    	<div id="classManagementTestReportsOverlay"></div>
+	    	<div id="testReportsImagePreview">
+	    		<img id="previewImage" class="img" src="images/imagePreview.png"/>
+	    		<button class="button" onclick="closeImagePreview()">Zavřít</button>
+	    	</div>
+            <div id="testReports">
+            	<!-- Zde se zobrazuje ovládání pro správu hlášení -->
+            	<div id="testReportsContent">
+    				<!-- HTML sem dodá PHP skrz AJAX -->        	
+            	</div>
+            	<button class="button" onclick="closeTestReports()">Zavřít</button>
+            </div>
         </div>
         <header>
             <h1>Správa třídy</h1>
