@@ -45,13 +45,13 @@
             echo "<tr class='membersTableRow'>";
             echo "<td class='membersTableCell'>".$user['jmeno']."</td>";
             echo "<td class='membersTableCell'>";
-            echo "<button class='actionButton' onclick='kickUser(event)' title='Odstranit ze třídy'><img src='images/cross.gif'/></button>";
+            echo "<button class='actionButton' onclick='kickUser(event)' title='Odstranit ze třídy'><img src='images/cross.svg'/></button>";
             echo "</td>";
             echo "</tr>";
         }
         
         echo "</table>";
-        echo "<button class='actionButton' onclick='inviteFormShow()' title='Pozvat nového člena'><img src='images/plus.gif'></button>";
+        echo "<button class='actionButton' onclick='inviteFormShow()' title='Pozvat nového člena'><img src='images/plus.svg'></button>";
         echo "
         <div id='inviteForm'>
             <div id='inviteUserInfo'>Pozvaný uživatel bude mít týden na přijmutí pozvánky. Pozvání nelze odvolat.</div>

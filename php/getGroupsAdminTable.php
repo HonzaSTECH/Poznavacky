@@ -46,17 +46,17 @@
                     <td class='testsTableCell'>
                         <button class='actionButton' onclick='manageTest(".$test['poznavacky_id'].")' title='Spravovat hlášení'><img src='images/management.gif'></button>
                         <button class='actionButton' onclick='editTest(".$test['poznavacky_id'].")' title='Upravit poznávačku'><img src='images/pencil.gif'></button>
-                        <button class='actionButton' onclick='deleteTest(".$test['poznavacky_id'].")' title='Odstranit poznávačku'><img src='images/cross.gif'/></button>
+                        <button class='actionButton' onclick='deleteTest(".$test['poznavacky_id'].")' title='Odstranit poznávačku'><img src='images/cross.svg'/></button>
                     </td>
                 </tr>
                 ";
         }
         echo "</table>";
         echo "
-        <button class='actionButton' onclick='createTest()' title='Vytvořit novou poznávačku'><img src='images/plus.gif'></button>
+        <button class='actionButton' onclick='createTest()' title='Vytvořit novou poznávačku'><img src='images/plus.svg'></button>
         <div id='createForm'>
             <div id='createInfo'>Zadejte název nové poznávačky. Do poznávačky budete moci přidat části a přírodniny později.</div>
-            <input id='createInput' placeholder='Název poznávačky' type='text' maxlength=31>
+            <input id='createInput' placeholder='Název poznávačky' type='text' class='text' maxlength=31>
             <button onclick='createTestSubmit()' class='button'>Vytvořit</button>
             <button onclick='createTestHide()' class='button'>Zrušit</button>
         </div>
