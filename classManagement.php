@@ -96,7 +96,7 @@
                 <tr>
                     <td class='table_left'>Stav třídy</td>
                     <td class='table_right' id="status">
-                        <select id="statusInput" onchange="statusChange()">
+                        <select id="statusInput" onchange="statusChange()" class="text dropList">
                         <?php
                             switch ($classData['status'])
                             {
@@ -121,8 +121,8 @@
                     </td>
                     <td class='table_action'>
                     	<div id='statusCodeInput'>
-                    		<span>Vstupní kód: </span>
-                        	<input id='statusCodeInputField' type=text maxlength=4 value=<?php echo $classData['kod']; ?> style='width: 2rem;' oninput="statusChange()"/>
+                    		<span>Vstupní kód:</span>
+                        	<input id='statusCodeInputField' type=text maxlength=4 value=<?php echo $classData['kod']; ?> style='width: 3.2rem;' class="text" oninput="statusChange()"/>
                         </div>
                         <button id="statusSaveButton" class="button" onclick="confirmStatusChange()">Aktualizovat</button>
                     </td>

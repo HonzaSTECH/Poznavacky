@@ -46,7 +46,7 @@
         <button class='button' onclick='enterClassCode()'>Zadat kód soukromé třídy</button>
     </div>
     <div id='classCodeForm' style='display:none;'>
-        <input id='classCodeInput' type=text maxlength=4 style='width: 2rem;'/>
+        <input id='classCodeInput' type=text maxlength=4 class='text' style='width: 3.2rem;'/>
         <button class='button' onclick='submitClassCode()'>OK</button>
         <button class='button' onclick='closeClassCode()'>Zpět</button>
     </div>";
