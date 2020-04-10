@@ -473,6 +473,7 @@ th {
     top: -0.08rem;
     padding: 0;
     vertical-align: middle;
+    background: none;
 }
 .actionButton img {
 
